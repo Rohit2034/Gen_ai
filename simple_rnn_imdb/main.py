@@ -10,8 +10,7 @@ word_index = imdb.get_word_index()
 reverse_word_index = {value: key for key, value in word_index.items()}
 
 # Load the pre-trained model with ReLU activation
-model_path = r"C:\Users\303370\Desktop\gen_ai\rnn_learning_projects/simplernn_imdb.h5"
-model = load_model(model_path)
+model = load_model('simple_rnn_imdb.h5')
 
 # Step 2: Helper Functions
 # Function to decode reviews
@@ -48,12 +47,4 @@ if st.button('Classify'):
     st.write(f'Prediction Score: {prediction[0][0]}')
 else:
     st.write('Please enter a movie review.')
-
-# quick checks
-# import os
-# print("model exists:", os.path.exists('simplernn_imdb.h5'))
-# proc = preprocessed_input("This movie was great")
-# print("processed shape, dtype:", proc.shape, proc.dtype)
-# print("model input shape:", model.input_shape)
-# print("sample prediction:", model.predict(proc))
 
